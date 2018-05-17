@@ -5,8 +5,16 @@
 
 2.oo 面向对象
 
-答：面向对象主要体现在封装、继承、多态三个概念
+答：面向对象主要体现在封装、继承、多态三个概念，多态涉及JVM中的静态分派实现细节，继承涉及到JVM在运行期的动态分派实施细节
 
 3.HashMap原理，HashMap在java8中的改变，ConcurrentHashMap的原理
 
-答：HashMap
+答：1.HashMap本质上是一个数组，每一个元素都是一个entry链表，HashMap不是线程安全的，在高并发下，可能会出现链表成环.
+
+2.HashMap的初始大小是16，为什么不是10，或者其他，因为在对key进行Hash计算再计算index的时候采用了位与运算，最终index是由Hash值的后几位确定，能保证数据的均匀分配。
+
+3.java8的Hash实现加入了红黑树算法。
+
+4.ConcurrentHashMap 由一堆segment组成，没一个segment都是一个Map，每一个Map有它自己单独锁，在get和put的过程中都需要两次index才能定位到具体位置，本质上就是降低颗粒度，使具有高并发的能力。
+
+5.ConcurrentHashMap在高并发才统计size采用的悲观锁转乐观锁的方案，先统计每一个segment的size和修改次数，如不同则以自旋的方式再次统计，自旋到一定次数后则采用悲观锁全局加锁，再进行统计。
