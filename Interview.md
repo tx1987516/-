@@ -81,3 +81,12 @@
 
 12. GTS细节
 
+13. jsp 9打内置对象
+
+答
+
+* 输入输出对象 ，request 、response、out
+* 通信对象 pageContext、 session、application
+* servlet对象 page本身，config
+* 异常处理对象 exception
+
