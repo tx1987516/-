@@ -1,4 +1,6 @@
-#面试题总结
+##面试题整理
+
+
 1.异步、同步、阻塞和非阻塞
 
 答：
@@ -109,3 +111,9 @@
 * 垃圾回收器 （serial连续收集器 ，ParNew并行收集器）/(Serial Old,CMS(concurrent mark sweep));Parallel Scavenge(吞吐量优先收集器)/(Parallel Old,Serial Old)  并发，并行多了一个并发标记的阶段
 
 * 类加载机制 启动加载器（lib 或-Xbootclasspath参数），扩展加载器（lib/ext或java.ext.dirs系统变量），应用程序加载器（classpath），自定义加载器，双亲委派机制
+
+15.redis 做分布式锁
+
+16.segment底层的实现
+
+17.++i;i++底层实现
