@@ -121,9 +121,11 @@
 18.动态代理具体细节
 
 答：
-* JDK代理 实现invocationHandler接口，并复写invoke方法，调用method.invoke(target，args)方法相当于调用被代理的对象方法，用Proxy.newProxyInstance创建代理对象（需要接口）
+* JDK代理  实现invocationHandler接口，并复写invoke方法，调用method.invoke(target，args)方法相当于调用被代理的对象方法，用Proxy.newProxyInstance创建代理对象（需要接口）
 
 * cglib代理，实现MethodInterceptor,并复写interceptor方法，调用methodProxy.invokeSuper(o,args)，相当于调用被代理的对象，创建enhance，设置superClass为被代理对象，callback回调为实现methodInterceptor实现类，然后再create.(非final类即可)
+
+* HandlerInterceptor 为SpringMvc拦截器接口
 
 19 tomcat底层细节
 
