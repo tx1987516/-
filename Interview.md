@@ -132,3 +132,5 @@
 19 tomcat底层细节
 
 20 线程基础重学
+
+答 ：yield 谦让出去，重新竞争， join（本质是wait（0））等待完成，只有守护线程的情况下，jvm会马上停止，suspend（挂起）resume（继续执行）过时方法，不建议使用，不能保证执行先后顺序，interrupt通知中断，然后通过是否是被通知状态做出处理，sleep的catch后需要重新interrupt，因为抛出interruptexception后中断状态被重置了，start才会开启新线程，直接调用run只会执行方法，不会开启新线程，stop不推荐使用，比较暴力，它会释放所有的锁，wait.notify使用前需先获得锁
