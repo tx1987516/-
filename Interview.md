@@ -118,6 +118,11 @@
 
 16.segment底层的实现
 
+答：
+
+* jdk7才用segment继承reentrantlock可重入锁机制 get方法两次使用unsafe的getObjectVolatile方法，put方法先定位segmengt再在segment的put方法中加锁
+* jdk 8完全取消segment锁分段的思想，采用数组node+链表/红黑树的设计思路链表长度大于8时转成红黑树，小于6时转为链表 put方法是用的synchronized关键字，说明jdk8jvm自带锁已被优化。
+
 17.++i;i++底层实现
 
 18.动态代理具体细节
@@ -126,6 +131,8 @@
 * JDK代理  实现invocationHandler接口，并复写invoke方法，调用method.invoke(target，args)方法相当于调用被代理的对象方法，用Proxy.newProxyInstance创建代理对象（需要接口）
 
 * cglib代理，实现MethodInterceptor,并复写interceptor方法，调用methodProxy.invokeSuper(o,args)，相当于调用被代理的对象，创建enhance，设置superClass为被代理对象，callback回调为实现methodInterceptor实现类，然后再create.(非final类即可)
+
+* javassist动态代理 
 
 * HandlerInterceptor 为SpringMvc拦截器接口
 
