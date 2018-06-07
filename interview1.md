@@ -44,8 +44,3 @@
 
 21.关于树 二叉查找树，自平衡二叉查找树,多路平衡查找树，B+树
 
-22. springboot核心自动装配
-
-答：
-
-* SpringBootApplication注解由配置、自动配置可用、扫描三个注解组合而成，核心注解是EnableAutoConfiguration，它import一个class----EnableAutoConfigurationImportSelector使用SpringFactoriesLoader.loadFactoryNames扫描META-INF/spring.factories,发现自动装配的核心类，使用ConfigurationProperties，EnableConfigurationProperties，ConditionalOnClass,ConditionalOnProperties,ConditionalOnMissBean，并在classpath下META-INF/spring.fatories中添加自动装配触发类
