@@ -54,3 +54,4 @@
     * 攻击 -XSS(消毒。HTTPOnly) sql注入（避免暴露数据库设计，预编译）CSRF（表单token，验证码，请求头referer check）web应用防火墙-ModSecurity。siteshell
     * 加密 -单向散列加盐，非对称安全传输，数字签名防抵赖，秘钥分片管理
     * 风控 -统计模型预测
+11
