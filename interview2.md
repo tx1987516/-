@@ -9,7 +9,7 @@
 答：
 * spring的生命周期涉及到BeanFacttoryPostProcessor(bean工厂后置处理器)、BeanPostProcessor(bean后置处理器)、InstantiationAwareBeanPostProcessor(实例化监听bean后置处理器)、BeanFactoryAware(bean工厂监听)、BeanNameAware(bean名字监听)、InitializingBean(初始化bean)、DisposableBean(销毁bean)接口对应的方法及bean的init-method和destroy-method
 * bean工厂后置处理器构造方法-->beanFactoryPostProcessory的postProcessBeanFactory方法--—>beanPostProcessory构造方法-->实例化监听bean后置处理器构造方法-->
-* 实例化监听bean后置处理器的postProcessBeforeInstantition方法-->bean构造器-->实例化监听bean后置处理器的postProcessAfterIntantiation方法-->实例化监听bean后置处理器的postProcessPropertyValues方法-->bean的set方法-->beanName监听的设置beanName方法-->bean工厂监听的设置bean工厂的方法-->bean后置处理器的实例化之前的后置处理-->初始化bean接口的afterPropertySet方法-->bean的初始化方法-->bean后置处理器的实例化后的的后置处理方法-->
+* 实例化监听bean后置处理器的postProcessBeforeInstantition方法-->bean构造器-->实例化监听bean后置处理器的postProcessAfterIntantiation方法-->实例化监听bean后置处理器的postProcessPropertyValues方法-->bean的set方法-->beanName监听的设置beanName方法-->bean工厂监听的设置bean工厂的方法-->bean后置处理器的初始化之前的后置处理-->初始化bean接口的afterPropertySet方法-->bean的初始化方法-->bean后置处理器的初始化后的的后置处理方法-->
 * disposableBean的destroy方法-->bean的destorymehod方法
 
 * 整体思路bean工厂后置处理器实例化---后调用后置处理方法---bean后置处理器实例化--实例化监听bean后置处理器实例化   
